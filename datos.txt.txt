@@ -1,0 +1,8 @@
+Nombre y apellido: Tomás Cahue, Florencia Vélez.
+Carrera: Diseño y programación web
+Materia: Portales y comercio electrónico
+Año: 2023
+Turno: noche
+Comisión: dwn4ap
+Docente: Santiago Gallino
+Carácter de entrega: 2do parcial
