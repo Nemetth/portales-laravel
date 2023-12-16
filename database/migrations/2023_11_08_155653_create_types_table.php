@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('types', function (Blueprint $table){
+        Schema::create('types', function (Blueprint $table) {
             $table->tinyIncrements('types_id');
             $table->string('name', 20);
             $table->timestamps();

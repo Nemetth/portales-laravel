@@ -2,11 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Session;
-use App\Models\User;
 
 class CheckAdminUser
 {
@@ -17,9 +16,9 @@ class CheckAdminUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!$request->user() || $request->user()->role !== 1) {
+        if (!$request->user() || $request->user()->role !== 1) {
             return redirect()
-            ->route('auth.login.form');
+                ->route('auth.login.form');
         }
         return $next($request);
     }

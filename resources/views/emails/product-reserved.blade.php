@@ -1,7 +1,6 @@
 <?php
 use App\Models\MagicProduct;
 /** @var Magic $magic */
-
 ?>
 <div>
     <h1>La Reserva del Producto fue Exitoso</h1>

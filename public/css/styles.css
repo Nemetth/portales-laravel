@@ -94,7 +94,8 @@ body,
 }
 
 .hero-section__container {
-    background: linear-gradient(rgba(0, 0, 0, 0.754), rgba(0, 0, 0, 0.431)), url("../img/Img-hero.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.754), rgba(0, 0, 0, 0.431)),
+        url("../img/Img-hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -105,7 +106,8 @@ body,
 }
 
 .hero-section__subtitle,
-.hero-section__title, .article__title {
+.hero-section__title,
+.article__title {
     font-family: var(--primary-font);
     font-weight: 700;
     margin: 0 0 1.5rem;
@@ -113,7 +115,7 @@ body,
 
 .hero-section__title {
     font-size: 64px;
-    color:#d2d2d2;
+    color: #d2d2d2;
 }
 
 .hero-section__subtitle {
@@ -174,10 +176,10 @@ body,
     color: #d2d2d2;
 }
 
-
 /* catalogo */
 .catalogo__container {
-    background: linear-gradient(rgba(0, 0, 0, 0.754), rgba(0, 0, 0, 0.431)), url("../img/Img-hero.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.754), rgba(0, 0, 0, 0.431)),
+        url("../img/Img-hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -219,14 +221,14 @@ body,
 }
 .article__title {
     font-size: 64px;
-    color:#d2d2d2;
+    color: #d2d2d2;
 }
 .article-section__text {
     margin: 2rem;
     color: #d2d2d2;
 }
 
-.article-section__btn{
+.article-section__btn {
     background-color: var(--primary-color);
     border: 1px solid transparent;
     transition: background 0.3s ease-in-out;
@@ -263,7 +265,7 @@ body,
     text-decoration: none;
     color: #d2d2d2;
 }
- .admin-section__text {
+.admin-section__text {
     margin: 2rem;
     color: #d2d2d2;
 }
@@ -294,7 +296,8 @@ body,
     border: 1px solid #ccc;
 }
 
-.admin-section__table th, .admin-section__table td {
+.admin-section__table th,
+.admin-section__table td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
@@ -307,7 +310,8 @@ body,
 
 /*forms*/
 .form__container {
-    background: linear-gradient(rgba(0, 0, 0, 0.754), rgba(0, 0, 0, 0.431)), url("../img/Img-hero.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.754), rgba(0, 0, 0, 0.431)),
+        url("../img/Img-hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -324,6 +328,32 @@ body,
 
 .footer p {
     margin: 0;
+}
+
+/*Mercado pago*/
+.contianer--btn {
+    max-width: 40%;
+    margin-left: 2rem;
+}
+
+.status__container {
+    background-color: var(--secondary-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status__section {
+    width: 800px;
+    height: 400px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--primary-font);
+    flex-direction: column;
+    color: #fff;
 }
 
 /* Responsive */
@@ -344,7 +374,8 @@ body,
         height: max-content;
         padding-top: 5rem;
     }
-    .catalogo__container, .article-section__container {
+    .catalogo__container,
+    .article-section__container {
         height: max-content;
         padding-top: 8rem;
         padding-bottom: 2rem;
@@ -352,7 +383,8 @@ body,
     .card {
         margin-top: 1rem;
     }
-    .article__title, .hero-section__title {
+    .article__title,
+    .hero-section__title {
         font-size: 32px;
     }
     .news-section__container {

@@ -2,28 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Rating;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-use \Illuminate\Database\Eloquent\Concerns\HasAttributes;
-
-
+use Illuminate\Database\Eloquent\Model;
 
 class MagicProduct extends Model
 {
     protected $table = 'magic_products';
     protected $primaryKey = 'magic_id';
 
-    protected $fillable = ["name", "price", "description", "category", "image", "rating_id" ];
+    protected $fillable = ["name", "price", "description", "category", "image", "rating_id"];
 
     public const VALIDATION_RULES = [
         // 'title' => ['required', 'min:2'],
         'name' => 'required|min:2',
         'price' => 'required|numeric',
         'category' => 'required',
-        'description'=> 'required',
-        "rating_id"=> 'required|exists:ratings'
+        'description' => 'required',
+        "rating_id" => 'required|exists:ratings',
     ];
 
     public const VALIDATION_MESSAGES = [
@@ -31,12 +26,11 @@ class MagicProduct extends Model
         'name.min' => 'El producto debe tener al menos dos caracteres',
         'price.required' => 'El precio del producto no puede quedar vacío.',
         'price.numeric' => 'El precio debe ser un número.',
-        'category.required'=> 'Debe tener una categoria',
+        'category.required' => 'Debe tener una categoria',
         'description.required' => 'La descripción no puede estar vacía.',
         'rating_id.required' => 'Debes seleccionar una clasificación',
         'rating_id.required' => 'La clasificación seleccionada no existe',
     ];
-
 
     public function rating()
     {
