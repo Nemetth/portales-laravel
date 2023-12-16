@@ -4,11 +4,10 @@ namespace App\Mail;
 
 use App\Models\MagicProduct;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
 class ProductReserved extends Mailable
@@ -17,8 +16,7 @@ class ProductReserved extends Mailable
 
     public function __construct(
         public MagicProduct $magic,
-    )
-    {}
+    ) {}
 
     /**
      * Get the message envelope.

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->tinyIncrements("rating_id");
-            $table-> string('name', 30);
+            $table->string('name', 30);
             $table->timestamps();
         });
     }

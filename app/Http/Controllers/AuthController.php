@@ -17,24 +17,24 @@ class AuthController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ], [
             'email.required' => 'El campo de correo electrónico es obligatorio.',
             'email.email' => 'Ingrese un correo electrónico válido.',
-            'password.required' => 'El campo de contraseña es obligatorio.'
+            'password.required' => 'El campo de contraseña es obligatorio.',
         ]);
 
         $credentials = $request->only(['email', 'password']);
-        if(!Auth::attempt($credentials)){
+        if (!Auth::attempt($credentials)) {
             return redirect()
-            ->route('auth.login.form')
-            ->with('status.message', 'Por favor, corrija sus credenciales')
-            ->withInput();
+                ->route('auth.login.form')
+                ->with('status.message', 'Por favor, corrija sus credenciales')
+                ->withInput();
         }
 
         return redirect()
-        ->route('home')
-        ->with('status.message', '¡Bienvenido hechizero ' . Auth::user()->email . '!');
+            ->route('home')
+            ->with('status.message', '¡Bienvenido hechizero ' . Auth::user()->email . '!');
     }
 
     public function logoutProcess(Request $request)
@@ -45,8 +45,8 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()
-        ->route('auth.login.form')
-        ->with('status.message', 'Haz atravesado el portal de salida.');
+            ->route('auth.login.form')
+            ->with('status.message', 'Haz atravesado el portal de salida.');
     }
 
     //Registro
@@ -61,14 +61,14 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed',
         ], [
             'name.required' => 'El campo de nombre es obligatorio.',
             'email.required' => 'El campo de correo electrónico es obligatorio.',
             'email.email' => 'Ingrese un correo electrónico válido.',
             'email.unique' => 'El correo electrónico ya está en uso.',
             'password.required' => 'El campo de contraseña es obligatorio.',
-            'password.confirmed' => 'Las contraseñas no coinciden.'
+            'password.confirmed' => 'Las contraseñas no coinciden.',
         ]);
 
         $user = new User;
@@ -81,7 +81,7 @@ class AuthController extends Controller
         Auth::login($user);
 
         return redirect()
-        ->route('home')
-        ->with('status.message', '¡Bienvenido hechizero ' . Auth::user()->email . '!');
+            ->route('home')
+            ->with('status.message', '¡Bienvenido hechizero ' . Auth::user()->email . '!');
     }
 }
