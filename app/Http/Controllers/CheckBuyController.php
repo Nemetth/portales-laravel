@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\MagicProduct;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Http\Request;
 
 class CheckBuyController extends Controller
 {
@@ -20,6 +19,6 @@ class CheckBuyController extends Controller
         Session::put('confirmed', true);
 
         return redirect()
-        ->route('magic.view',['id' => $id]);
+            ->route('magic.view', ['id' => $id]);
     }
 }

@@ -15,7 +15,7 @@ class ProductReservationController extends Controller
         //Enviamos el mail
         Mail::to($request->user())->send(new ProductReserved($magic_products));
         return redirect()
-        ->route('magic.view', ['id' => $id])
-        ->with('status.message', 'El producto <b>' . e($magic_products->title) . '</b> se reservó con éxito');
+            ->route('magic.view', ['id' => $id])
+            ->with('status.message', 'El producto <b>' . e($magic_products->title) . '</b> se reservó con éxito');
     }
 }

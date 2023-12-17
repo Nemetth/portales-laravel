@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -18,26 +17,26 @@ class RatingSeeder extends Seeder
                 'rating_id' => 1,
                 "name" => 'Accesorios',
                 "created_at" => now(),
-                "updated_at" => now()
+                "updated_at" => now(),
             ],
             [
                 'rating_id' => 2,
                 "name" => 'Tarot',
                 "created_at" => now(),
-                "updated_at" => now()
+                "updated_at" => now(),
             ],
             [
                 'rating_id' => 3,
                 "name" => 'Libro',
                 "created_at" => now(),
-                "updated_at" => now()
+                "updated_at" => now(),
             ],
             [
                 'rating_id' => 4,
                 "name" => 'Cristales',
                 "created_at" => now(),
-                "updated_at" => now()
-            ]
+                "updated_at" => now(),
+            ],
         ]);
     }
 }

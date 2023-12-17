@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
+
 use App\Models\MagicProduct;
 use Closure;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
 
 class CheckBuy
@@ -19,9 +20,9 @@ class CheckBuy
         $id = $request->route()->parameter('id');
         $magic_product = MagicProduct::findOrFail($id);
 
-        if(($magic_product->magic_id === 1 || $magic_product->magic_id === 2 || $magic_product->magic_id === 4) && !Session::get('confirmed', false)) {
-           return redirect()
-           ->route('magic-products.check-buy.form', ['id' => $id]);
+        if (($magic_product->magic_id === 1 || $magic_product->magic_id === 2 || $magic_product->magic_id === 4) && !Session::get('confirmed', false)) {
+            return redirect()
+                ->route('magic-products.check-buy.form', ['id' => $id]);
         }
         return $next($request);
     }
