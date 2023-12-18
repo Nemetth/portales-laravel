@@ -95,7 +95,7 @@ use App\Models\Type;
                     <div class="mb-3">
                         <div class="mb-2">Portada Actual</div>
                         @if ($magicProduct->image != null && Storage::has($magicProduct->image))
-                            <img src="{{ asset('storage/' . $magicProduct->image) }}" alt="{{ $magicProduct->name }}">
+                            <img src="{{ asset('storage/' . $magicProduct->image) }}" class="d-table mx-auto" style="width: 50%;" alt="{{ $magicProduct->name }}">
                         @else
                             <p>El producto no tiene imagen</p>
                         @endif

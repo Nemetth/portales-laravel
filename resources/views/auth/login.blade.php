@@ -27,6 +27,9 @@
                         <div class="mb-3">
                             <label for="password" class="form-label text-white">Contraseña</label>
                             <input type="password" id="password" name="password" class="form-control">
+                            @if (\Session::has('status.message'))
+                                <div class="text-danger">{!! \Session::get('status.message') !!}</div>
+                            @endif
                         </div>
                         <button type="submit" class="hero-section__buttonStore">Ingresar</button>
                     </form>
