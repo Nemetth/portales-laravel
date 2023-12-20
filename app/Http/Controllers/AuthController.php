@@ -33,8 +33,8 @@ class AuthController extends Controller
         }
 
         return redirect()
-            ->route('home')
-            ->with('status.message', '¡Bienvenido hechizero ' . Auth::user()->email . '!');
+            ->route('home');
+            /* ->with('status.message', '¡Bienvenido hechizero ' . Auth::user()->email . '!'); */
     }
 
     public function logoutProcess(Request $request)
@@ -45,8 +45,8 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()
-            ->route('auth.login.form')
-            ->with('status.message', 'Haz atravesado el portal de salida.');
+            ->route('auth.login.form');
+/*             ->with('status.message', 'Haz atravesado el portal de salida.'); */
     }
 
     //Registro
@@ -81,7 +81,7 @@ class AuthController extends Controller
         Auth::login($user);
 
         return redirect()
-            ->route('home')
-            ->with('status.message', '¡Bienvenido hechizero ' . Auth::user()->email . '!');
+            ->route('home');
+/*             ->with('status.message', '¡Bienvenido hechizero ' . Auth::user()->email . '!'); */
     }
 }

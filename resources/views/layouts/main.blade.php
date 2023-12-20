@@ -21,12 +21,12 @@
 
 <body>
     <div id="app">
-        @if (\Session::has('status.message'))
+{{--         @if (\Session::has('status.message'))
             <div class="alert alert-{{ \Session::get('status.type', 'success') }}">{!! \Session::get('status.message') !!}</div>
-        @endif
+        @endif --}}
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="{{ url('img/Portales-logo.svg') }}"></a>
+                <a class="navbar-brand" alt="Logo de Portales" href="#"><img src="{{ url('img/Portales-logo.svg') }}"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -53,10 +53,10 @@
                                     </li>
                                 @else
                                 @endif
-                                <li class="nav-item">
+                                <li class="nav-item align-self-center">
                                     <form action="{{ route('auth.logout.process') }}" method="POST">
                                         @csrf
-                                        <button type="submit" class="user-btn">{{ auth()->user()->email }} (Cerrar
+                                        <button type="submit" class="user-btn align-self-center">{{ auth()->user()->name }} (Cerrar
                                             Sesión)</button>
                                     </form>
                                 </li>
