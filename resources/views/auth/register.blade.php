@@ -3,15 +3,7 @@
 @section('title', 'Registro')
 
 @section('content')
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+  
     <section>
         <div class="hero-section__container container-fluid d-flex align-items-center">
             <h1 class="text-center hero-section__title">Atravesar el portal de registro</h1>
@@ -38,6 +30,15 @@
                             <input type="password" id="password_confirmation" name="password_confirmation"
                                 class="form-control">
                         </div>
+                          @if ($errors->any())
+                            <div class="text-danger">
+                                <ul class="p-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                         <button type="submit" class="hero-section__buttonStore">Registrarse</button>
                     </form>
                 </div>
